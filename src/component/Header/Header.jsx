@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import profile from '../../images/user.png';
 import './header.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAsyncMovies, fetchAsyncShow, getAllMovieorShow } from '../../feature/movies/movieSlice';
+import { fetchAsyncMovies, fetchAsyncShow } from '../../feature/movies/movieSlice';
 
 const Header = () => {
   const [term, setTerm] = useState('');
   const dispatch = useDispatch();
-  const data = useSelector(getAllMovieorShow);
+
   const isLoading = useSelector((state) => state.movies.loading); // Get loading state from Redux
 
   const submitHandle = (e) => {
